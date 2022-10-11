@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>RaNdOm nOtEs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_randomnotes.css">
+  </head>
+  <body>
+<!--Button for randoming 1 note-->
+    <button onclick="randomOneNote()">Random 1 note</button>
+  
+
+  <script>
+// An array of 12 musical notes 
+    const notes = ["C", "C# / Db", "D", "D# / Eb", "E", "F", 
+  "F# / Gb", "G", "G# / Ab", "A", "A# / Bb", "B"];
+//randomize 1 character that are one of the 12 musical notes 
+  function randomOneNote () {
+    const randomNum = Math.floor(Math.random() * notes.length);
+    const randomNote = notes[randomNum];
+  //create a div to display the 1 randon note on HTML
+    const noteDiv = document.createElement('div');
+    noteDiv.innerText = randomNote;
+    document.body.appendChild(noteDiv);//can't make the previous note disappear, how?
+    //push noteDiv in an array
+    const noteDivArr = [];
+    noteDivArr.push(noteDiv.innerText);
+    console.log(noteDivArr);
+    //if array.length=
+    //if noteDiv=1
+  }
+  </script> 
+
+  </body>
+</html>
