@@ -34,6 +34,29 @@
   </script> 
 
 <!--RANDOMING 3 NOTES--> 
+  <!--3notes random btn-->
+  <button id="random3notes-button" onclick="randomThreeNotes()">Random 3 notes</button>
+  <div id="3notesDiv"></div>
+
+  <script>
+    // Pick three DIFFERENT random notes from 'notes' array
+    // -- pick one notes and remove it from the array, repeats three times
+    //    use splice(position in number, number of removed item(1)) (overwrite the array)
+    //    let itemsRemoved = i, for (i = 0; i < 3; i++) (stops)
+    //    randArray = [Three removed notes]
+    function randomThreeNotes() {
+      const randArray = [];
+      const notes = ["C", "C# / Db", "D", "D# / Eb", "E", "F", 
+        "F# / Gb", "G", "G# / Ab", "A", "A# / Bb", "B"];
+      for (let i = 0; i < 3; i++) {
+        randArray.push(notes.splice(Math.floor(Math.random() * notes.length), 1));
+      }
+      document.getElementById('3notesDiv').innerHTML = randArray; 
+    } 
+    /*problems: .splice() overwrites 'notes' array, therefore after four runs of randomThreeNotes(),
+      there's no notes in that array anymore => creates a new notes array at the beginning of the 
+      function randomThreeNotes*/
+  </script>
 
   </body>
 </html>
